@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="dvClientes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>363, 17</value>
+  </metadata>
+  <metadata name="DS_FC001.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>257, 17</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="SqlSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        cod_cte, razon_social, nombre, rfc, ap_paterno, ap_materno, telefono, extension, telefono2, celular, calle, calle_num, calle_entre1, calle_entre2, colonia, cod_postal, status, dbo.direccionCompleta(cod_cte, 'C') 
+                         AS direccionCompleta, dbo.nombreCompleto(cod_cte, 'C') AS nombreCompleto, ISNULL(usuario, '') AS usuario
+FROM            clientes WITH (NOLOCK)</value>
+  </data>
+  <metadata name="sqlConn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
+  </metadata>
+  <metadata name="sdaClientes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="SqlDeleteCommand.CommandText" xml:space="preserve">
+    <value>DELETE FROM [clientes] WHERE (([cod_cte] = @Original_cod_cte) AND ((@IsNull_razon_social = 1 AND [razon_social] IS NULL) OR ([razon_social] = @Original_razon_social)) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_rfc = 1 AND [rfc] IS NULL) OR ([rfc] = @Original_rfc)) AND ((@IsNull_ap_paterno = 1 AND [ap_paterno] IS NULL) OR ([ap_paterno] = @Original_ap_paterno)) AND ((@IsNull_ap_materno = 1 AND [ap_materno] IS NULL) OR ([ap_materno] = @Original_ap_materno)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_extension = 1 AND [extension] IS NULL) OR ([extension] = @Original_extension)) AND ((@IsNull_telefono2 = 1 AND [telefono2] IS NULL) OR ([telefono2] = @Original_telefono2)) AND ((@IsNull_celular = 1 AND [celular] IS NULL) OR ([celular] = @Original_celular)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_calle_num = 1 AND [calle_num] IS NULL) OR ([calle_num] = @Original_calle_num)) AND ((@IsNull_calle_entre1 = 1 AND [calle_entre1] IS NULL) OR ([calle_entre1] = @Original_calle_entre1)) AND ((@IsNull_calle_entre2 = 1 AND [calle_entre2] IS NULL) OR ([calle_entre2] = @Original_calle_entre2)) AND ((@IsNull_colonia = 1 AND [colonia] IS NULL) OR ([colonia] = @Original_colonia)) AND ((@IsNull_cod_postal = 1 AND [cod_postal] IS NULL) OR ([cod_postal] = @Original_cod_postal)) AND ((@IsNull_status = 1 AND [status] IS NULL) OR ([status] = @Original_status)))</value>
+  </data>
+  <metadata name="SqlInsertCommand.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlInsertCommand.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="SqlInsertCommand.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="SqlInsertCommand.CommandText" xml:space="preserve">
+    <value>INSERT INTO [clientes] ([cod_cte], [razon_social], [nombre], [rfc], [ap_paterno], [ap_materno], [telefono], [extension], [telefono2], [celular], [calle], [calle_num], [calle_entre1], [calle_entre2], [colonia], [cod_postal], [status]) VALUES (@cod_cte, @razon_social, @nombre, @rfc, @ap_paterno, @ap_materno, @telefono, @extension, @telefono2, @celular, @calle, @calle_num, @calle_entre1, @calle_entre2, @colonia, @cod_postal, @status);
+SELECT cod_cte, razon_social, nombre, rfc, ap_paterno, ap_materno, telefono, extension, telefono2, celular, calle, calle_num, calle_entre1, calle_entre2, colonia, cod_postal, status, dbo.direccionCompleta(cod_cte, 'C') AS direccionCompleta, dbo.nombreCompleto(cod_cte, 'C') AS nombreCompleto, ISNULL(usuario, '') AS usuario FROM clientes WITH (NOLOCK) WHERE (cod_cte = @cod_cte)</value>
+  </data>
+  <metadata name="SqlUpdateCommand.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlUpdateCommand.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="SqlUpdateCommand.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="SqlUpdateCommand.CommandText" xml:space="preserve">
+    <value>UPDATE [clientes] SET [cod_cte] = @cod_cte, [razon_social] = @razon_social, [nombre] = @nombre, [rfc] = @rfc, [ap_paterno] = @ap_paterno, [ap_materno] = @ap_materno, [telefono] = @telefono, [extension] = @extension, [telefono2] = @telefono2, [celular] = @celular, [calle] = @calle, [calle_num] = @calle_num, [calle_entre1] = @calle_entre1, [calle_entre2] = @calle_entre2, [colonia] = @colonia, [cod_postal] = @cod_postal, [status] = @status WHERE (([cod_cte] = @Original_cod_cte) AND ((@IsNull_razon_social = 1 AND [razon_social] IS NULL) OR ([razon_social] = @Original_razon_social)) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_rfc = 1 AND [rfc] IS NULL) OR ([rfc] = @Original_rfc)) AND ((@IsNull_ap_paterno = 1 AND [ap_paterno] IS NULL) OR ([ap_paterno] = @Original_ap_paterno)) AND ((@IsNull_ap_materno = 1 AND [ap_materno] IS NULL) OR ([ap_materno] = @Original_ap_materno)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_extension = 1 AND [extension] IS NULL) OR ([extension] = @Original_extension)) AND ((@IsNull_telefono2 = 1 AND [telefono2] IS NULL) OR ([telefono2] = @Original_telefono2)) AND ((@IsNull_celular = 1 AND [celular] IS NULL) OR ([celular] = @Original_celular)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_calle_num = 1 AND [calle_num] IS NULL) OR ([calle_num] = @Original_calle_num)) AND ((@IsNull_calle_entre1 = 1 AND [calle_entre1] IS NULL) OR ([calle_entre1] = @Original_calle_entre1)) AND ((@IsNull_calle_entre2 = 1 AND [calle_entre2] IS NULL) OR ([calle_entre2] = @Original_calle_entre2)) AND ((@IsNull_colonia = 1 AND [colonia] IS NULL) OR ([colonia] = @Original_colonia)) AND ((@IsNull_cod_postal = 1 AND [cod_postal] IS NULL) OR ([cod_postal] = @Original_cod_postal)) AND ((@IsNull_status = 1 AND [status] IS NULL) OR ([status] = @Original_status)));
+SELECT cod_cte, razon_social, nombre, rfc, ap_paterno, ap_materno, telefono, extension, telefono2, celular, calle, calle_num, calle_entre1, calle_entre2, colonia, cod_postal, status, dbo.direccionCompleta(cod_cte, 'C') AS direccionCompleta, dbo.nombreCompleto(cod_cte, 'C') AS nombreCompleto, ISNULL(usuario, '') AS usuario FROM clientes WITH (NOLOCK) WHERE (cod_cte = @cod_cte)</value>
+  </data>
+  <metadata name="SqlSelectCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlSelectCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="SqlSelectCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sdaStatus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>459, 19</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btnDeshacer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        f9DrPP5mdaTfAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnModificar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btnNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAVdJREFUWEft179qwzAQBvAr/U+Xbl0CXvxkfYT2EfoELXQp3UqHvkHGxNZmO3i1
+        IdoEMomxISGJ4zhXVMgQ0WK19hUC/uBbdT80iBOAlvF4fCuEePhroyi6tyzrQj/XOFmWOdggi8UCgyD4
+        6PV6l/rZRmkK2G63KITAMAzfbds+18+vTVOASp7nOJ/PcTQavf0a0QZgNpt93YRC+L7/CgBn+pwf0wZA
+        DVbZITzPewGAU33Wt2kDsFqtMMsylFIi5xzjOEbG2LMRog2AHnUTCsUYuwOAI33mXigAu7iu+wQAx/rM
+        vfwD4ESfuZcO0AE6QJqmjno4KNoBjAFVVSFFDwew2WyQokaA6XRKBhgOh2aAsiyRoocBmEwmznq9Rooa
+        A4qiQIoaAZIkcdT+RlFjwHK5RIoOBoN6gJTSUf87ihoBOOeO2ucp2u/3H2u3YgC4AoAbol7r/4JPiG3V
+        sGjMwq0AAAAASUVORK5CYII=
+</value>
+  </data>
+</root>

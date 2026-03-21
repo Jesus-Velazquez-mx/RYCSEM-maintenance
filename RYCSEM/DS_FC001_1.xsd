@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_FC001_1" targetNamespace="http://tempuri.org/DS_FC001_1.xsd" xmlns:mstns="http://tempuri.org/DS_FC001_1.xsd" xmlns="http://tempuri.org/DS_FC001_1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_FC001_1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DS_FC001_1" msprop:Generator_UserDSName="DS_FC001_1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="refencia_clientes" msprop:Generator_TableClassName="refencia_clientesDataTable" msprop:Generator_TableVarName="tablerefencia_clientes" msprop:Generator_TablePropName="refencia_clientes" msprop:Generator_RowDeletingName="refencia_clientesRowDeleting" msprop:Generator_RowChangingName="refencia_clientesRowChanging" msprop:Generator_RowEvHandlerName="refencia_clientesRowChangeEventHandler" msprop:Generator_RowDeletedName="refencia_clientesRowDeleted" msprop:Generator_UserTableName="refencia_clientes" msprop:Generator_RowChangedName="refencia_clientesRowChanged" msprop:Generator_RowEvArgName="refencia_clientesRowChangeEvent" msprop:Generator_RowClassName="refencia_clientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod_ref" msprop:Generator_ColumnVarNameInTable="columncod_ref" msprop:Generator_ColumnPropNameInRow="cod_ref" msprop:Generator_ColumnPropNameInTable="cod_refColumn" msprop:Generator_UserColumnName="cod_ref" type="xs:int" />
+              <xs:element name="cod_cte" msprop:Generator_ColumnVarNameInTable="columncod_cte" msprop:Generator_ColumnPropNameInRow="cod_cte" msprop:Generator_ColumnPropNameInTable="cod_cteColumn" msprop:Generator_UserColumnName="cod_cte" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cliente" msprop:Generator_ColumnVarNameInTable="columncliente" msprop:Generator_ColumnPropNameInRow="cliente" msprop:Generator_ColumnPropNameInTable="clienteColumn" msprop:Generator_UserColumnName="cliente" type="xs:boolean" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="cod_cteRef" msprop:Generator_ColumnVarNameInTable="columncod_cteRef" msprop:Generator_ColumnPropNameInRow="cod_cteRef" msprop:Generator_ColumnPropNameInTable="cod_cteRefColumn" msprop:Generator_UserColumnName="cod_cteRef" type="xs:decimal" default="1" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="status" msprop:Generator_TableClassName="statusDataTable" msprop:Generator_TableVarName="tablestatus" msprop:Generator_TablePropName="status" msprop:Generator_RowDeletingName="statusRowDeleting" msprop:Generator_RowChangingName="statusRowChanging" msprop:Generator_RowEvHandlerName="statusRowChangeEventHandler" msprop:Generator_RowDeletedName="statusRowDeleted" msprop:Generator_UserTableName="status" msprop:Generator_RowChangedName="statusRowChanged" msprop:Generator_RowEvArgName="statusRowChangeEvent" msprop:Generator_RowClassName="statusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="abreviatura" msprop:Generator_ColumnVarNameInTable="columnabreviatura" msprop:Generator_ColumnPropNameInRow="abreviatura" msprop:Generator_ColumnPropNameInTable="abreviaturaColumn" msprop:Generator_UserColumnName="abreviatura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:refencia_clientes" />
+      <xs:field xpath="mstns:cod_ref" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

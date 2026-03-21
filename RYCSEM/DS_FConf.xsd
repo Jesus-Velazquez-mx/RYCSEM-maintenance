@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_FConf" targetNamespace="http://tempuri.org/DS_FConf.xsd" xmlns:mstns="http://tempuri.org/DS_FConf.xsd" xmlns="http://tempuri.org/DS_FConf.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_FConf" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DS_FConf" msprop:Generator_UserDSName="DS_FConf">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="intereses" msprop:Generator_TableClassName="interesesDataTable" msprop:Generator_TableVarName="tableintereses" msprop:Generator_RowChangedName="interesesRowChanged" msprop:Generator_TablePropName="intereses" msprop:Generator_RowDeletingName="interesesRowDeleting" msprop:Generator_RowChangingName="interesesRowChanging" msprop:Generator_RowEvHandlerName="interesesRowChangeEventHandler" msprop:Generator_RowDeletedName="interesesRowDeleted" msprop:Generator_RowClassName="interesesRow" msprop:Generator_UserTableName="intereses" msprop:Generator_RowEvArgName="interesesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="folio" msprop:Generator_ColumnVarNameInTable="columnfolio" msprop:Generator_ColumnPropNameInRow="folio" msprop:Generator_ColumnPropNameInTable="folioColumn" msprop:Generator_UserColumnName="folio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="transaccion" msprop:Generator_ColumnVarNameInTable="columntransaccion" msprop:Generator_ColumnPropNameInRow="transaccion" msprop:Generator_ColumnPropNameInTable="transaccionColumn" msprop:Generator_UserColumnName="transaccion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rango1" msprop:Generator_ColumnVarNameInTable="columnrango1" msprop:Generator_ColumnPropNameInRow="rango1" msprop:Generator_ColumnPropNameInTable="rango1Column" msprop:Generator_UserColumnName="rango1" type="xs:decimal" />
+              <xs:element name="rango2" msprop:Generator_ColumnVarNameInTable="columnrango2" msprop:Generator_ColumnPropNameInRow="rango2" msprop:Generator_ColumnPropNameInTable="rango2Column" msprop:Generator_UserColumnName="rango2" type="xs:decimal" />
+              <xs:element name="tipo_interes" msprop:Generator_ColumnVarNameInTable="columntipo_interes" msprop:Generator_ColumnPropNameInRow="tipo_interes" msprop:Generator_ColumnPropNameInTable="tipo_interesColumn" msprop:Generator_UserColumnName="tipo_interes" type="xs:int" />
+              <xs:element name="porc_interes" msprop:Generator_ColumnVarNameInTable="columnporc_interes" msprop:Generator_ColumnPropNameInRow="porc_interes" msprop:Generator_ColumnPropNameInTable="porc_interesColumn" msprop:Generator_UserColumnName="porc_interes" type="xs:decimal" minOccurs="0" />
+              <xs:element name="prioridad" msprop:Generator_ColumnVarNameInTable="columnprioridad" msprop:Generator_ColumnPropNameInRow="prioridad" msprop:Generator_ColumnPropNameInTable="prioridadColumn" msprop:Generator_UserColumnName="prioridad" type="xs:int" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_tipo" msprop:Generator_ColumnVarNameInTable="columnnombre_tipo" msprop:Generator_ColumnPropNameInRow="nombre_tipo" msprop:Generator_ColumnPropNameInTable="nombre_tipoColumn" msprop:Generator_UserColumnName="nombre_tipo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="status" msprop:Generator_TableClassName="statusDataTable" msprop:Generator_TableVarName="tablestatus" msprop:Generator_RowChangedName="statusRowChanged" msprop:Generator_TablePropName="status" msprop:Generator_RowDeletingName="statusRowDeleting" msprop:Generator_RowChangingName="statusRowChanging" msprop:Generator_RowEvHandlerName="statusRowChangeEventHandler" msprop:Generator_RowDeletedName="statusRowDeleted" msprop:Generator_RowClassName="statusRow" msprop:Generator_UserTableName="status" msprop:Generator_RowEvArgName="statusRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="abreviatura" msprop:Generator_ColumnVarNameInTable="columnabreviatura" msprop:Generator_ColumnPropNameInRow="abreviatura" msprop:Generator_ColumnPropNameInTable="abreviaturaColumn" msprop:Generator_UserColumnName="abreviatura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tipos_intereses" msprop:Generator_TableClassName="tipos_interesesDataTable" msprop:Generator_TableVarName="tabletipos_intereses" msprop:Generator_RowChangedName="tipos_interesesRowChanged" msprop:Generator_TablePropName="tipos_intereses" msprop:Generator_RowDeletingName="tipos_interesesRowDeleting" msprop:Generator_RowChangingName="tipos_interesesRowChanging" msprop:Generator_RowEvHandlerName="tipos_interesesRowChangeEventHandler" msprop:Generator_RowDeletedName="tipos_interesesRowDeleted" msprop:Generator_RowClassName="tipos_interesesRow" msprop:Generator_UserTableName="tipos_intereses" msprop:Generator_RowEvArgName="tipos_interesesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipo_interes" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columntipo_interes" msprop:Generator_ColumnPropNameInRow="tipo_interes" msprop:Generator_ColumnPropNameInTable="tipo_interesColumn" msprop:Generator_UserColumnName="tipo_interes" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tipos_plazos" msprop:Generator_TableClassName="tipos_plazosDataTable" msprop:Generator_TableVarName="tabletipos_plazos" msprop:Generator_RowChangedName="tipos_plazosRowChanged" msprop:Generator_TablePropName="tipos_plazos" msprop:Generator_RowDeletingName="tipos_plazosRowDeleting" msprop:Generator_RowChangingName="tipos_plazosRowChanging" msprop:Generator_RowEvHandlerName="tipos_plazosRowChangeEventHandler" msprop:Generator_RowDeletedName="tipos_plazosRowDeleted" msprop:Generator_RowClassName="tipos_plazosRow" msprop:Generator_UserTableName="tipos_plazos" msprop:Generator_RowEvArgName="tipos_plazosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipo_plazo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columntipo_plazo" msprop:Generator_ColumnPropNameInRow="tipo_plazo" msprop:Generator_ColumnPropNameInTable="tipo_plazoColumn" msprop:Generator_UserColumnName="tipo_plazo" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="porc_interes" msprop:Generator_ColumnVarNameInTable="columnporc_interes" msprop:Generator_ColumnPropNameInRow="porc_interes" msprop:Generator_ColumnPropNameInTable="porc_interesColumn" msprop:Generator_UserColumnName="porc_interes" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:intereses" />
+      <xs:field xpath="mstns:folio" />
+    </xs:unique>
+    <xs:unique name="tipos_intereses_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tipos_intereses" />
+      <xs:field xpath="mstns:tipo_interes" />
+    </xs:unique>
+    <xs:unique name="tipos_plazos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tipos_plazos" />
+      <xs:field xpath="mstns:tipo_plazo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

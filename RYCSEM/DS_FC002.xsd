@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_FC002" targetNamespace="http://tempuri.org/DS_FC002.xsd" xmlns:mstns="http://tempuri.org/DS_FC002.xsd" xmlns="http://tempuri.org/DS_FC002.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_FC002" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DS_FC002" msprop:Generator_UserDSName="DS_FC002">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="formas_pago" msprop:Generator_TableClassName="formas_pagoDataTable" msprop:Generator_TableVarName="tableformas_pago" msprop:Generator_TablePropName="formas_pago" msprop:Generator_RowDeletingName="formas_pagoRowDeleting" msprop:Generator_RowChangingName="formas_pagoRowChanging" msprop:Generator_RowEvHandlerName="formas_pagoRowChangeEventHandler" msprop:Generator_RowDeletedName="formas_pagoRowDeleted" msprop:Generator_UserTableName="formas_pago" msprop:Generator_RowChangedName="formas_pagoRowChanged" msprop:Generator_RowEvArgName="formas_pagoRowChangeEvent" msprop:Generator_RowClassName="formas_pagoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="forma_pago" msprop:Generator_ColumnVarNameInTable="columnforma_pago" msprop:Generator_ColumnPropNameInRow="forma_pago" msprop:Generator_ColumnPropNameInTable="forma_pagoColumn" msprop:Generator_UserColumnName="forma_pago">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="abreviatura" msprop:Generator_ColumnVarNameInTable="columnabreviatura" msprop:Generator_ColumnPropNameInRow="abreviatura" msprop:Generator_ColumnPropNameInTable="abreviaturaColumn" msprop:Generator_UserColumnName="abreviatura" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="abonos" msprop:Generator_TableClassName="abonosDataTable" msprop:Generator_TableVarName="tableabonos" msprop:Generator_RowChangedName="abonosRowChanged" msprop:Generator_TablePropName="abonos" msprop:Generator_RowDeletingName="abonosRowDeleting" msprop:Generator_RowChangingName="abonosRowChanging" msprop:Generator_RowEvHandlerName="abonosRowChangeEventHandler" msprop:Generator_RowDeletedName="abonosRowDeleted" msprop:Generator_RowClassName="abonosRow" msprop:Generator_UserTableName="abonos" msprop:Generator_RowEvArgName="abonosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="folio" msprop:Generator_ColumnVarNameInTable="columnfolio" msprop:Generator_ColumnPropNameInRow="folio" msprop:Generator_ColumnPropNameInTable="folioColumn" msprop:Generator_UserColumnName="folio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="forma_pago" msprop:Generator_ColumnVarNameInTable="columnforma_pago" msprop:Generator_ColumnPropNameInRow="forma_pago" msprop:Generator_ColumnPropNameInTable="forma_pagoColumn" msprop:Generator_UserColumnName="forma_pago" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="importe" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:decimal" default="0" />
+              <xs:element name="poc_interes_moratorio" msprop:Generator_ColumnVarNameInTable="columnpoc_interes_moratorio" msprop:Generator_ColumnPropNameInRow="poc_interes_moratorio" msprop:Generator_ColumnPropNameInTable="poc_interes_moratorioColumn" msprop:Generator_UserColumnName="poc_interes_moratorio" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="interes_moratorio" msprop:Generator_ColumnVarNameInTable="columninteres_moratorio" msprop:Generator_ColumnPropNameInRow="interes_moratorio" msprop:Generator_ColumnPropNameInTable="interes_moratorioColumn" msprop:Generator_UserColumnName="interes_moratorio" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:long" minOccurs="0" />
+              <xs:element name="folio_doc" msprop:Generator_ColumnVarNameInTable="columnfolio_doc" msprop:Generator_ColumnPropNameInRow="folio_doc" msprop:Generator_ColumnPropNameInTable="folio_docColumn" msprop:Generator_UserColumnName="folio_doc" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="transaccion_doc" msprop:Generator_ColumnVarNameInTable="columntransaccion_doc" msprop:Generator_ColumnPropNameInRow="transaccion_doc" msprop:Generator_ColumnPropNameInTable="transaccion_docColumn" msprop:Generator_UserColumnName="transaccion_doc" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="cod_cte" msprop:Generator_ColumnVarNameInTable="columncod_cte" msprop:Generator_ColumnPropNameInRow="cod_cte" msprop:Generator_ColumnPropNameInTable="cod_cteColumn" msprop:Generator_UserColumnName="cod_cte" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="transaccion" msprop:Generator_ColumnVarNameInTable="columntransaccion" msprop:Generator_ColumnPropNameInRow="transaccion" msprop:Generator_ColumnPropNameInTable="transaccionColumn" msprop:Generator_UserColumnName="transaccion" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="abonoPendiente" msprop:Generator_TableClassName="abonoPendienteDataTable" msprop:Generator_TableVarName="tableabonoPendiente" msprop:Generator_RowChangedName="abonoPendienteRowChanged" msprop:Generator_TablePropName="abonoPendiente" msprop:Generator_RowDeletingName="abonoPendienteRowDeleting" msprop:Generator_RowChangingName="abonoPendienteRowChanging" msprop:Generator_RowEvHandlerName="abonoPendienteRowChangeEventHandler" msprop:Generator_RowDeletedName="abonoPendienteRowDeleted" msprop:Generator_RowClassName="abonoPendienteRow" msprop:Generator_UserTableName="abonoPendiente" msprop:Generator_RowEvArgName="abonoPendienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="saldo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsaldo" msprop:Generator_ColumnPropNameInRow="saldo" msprop:Generator_ColumnPropNameInTable="saldoColumn" msprop:Generator_UserColumnName="saldo" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="abono_sugerido" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnabono_sugerido" msprop:Generator_ColumnPropNameInRow="abono_sugerido" msprop:Generator_ColumnPropNameInTable="abono_sugeridoColumn" msprop:Generator_UserColumnName="abono_sugerido" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="porc_interes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnporc_interes" msprop:Generator_ColumnPropNameInRow="porc_interes" msprop:Generator_ColumnPropNameInTable="porc_interesColumn" msprop:Generator_UserColumnName="porc_interes" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="importe_moratorio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnimporte_moratorio" msprop:Generator_ColumnPropNameInRow="importe_moratorio" msprop:Generator_ColumnPropNameInTable="importe_moratorioColumn" msprop:Generator_UserColumnName="importe_moratorio" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="idPlanPagoDetalle" msprop:Generator_ColumnVarNameInTable="columnidPlanPagoDetalle" msprop:Generator_ColumnPropNameInRow="idPlanPagoDetalle" msprop:Generator_ColumnPropNameInTable="idPlanPagoDetalleColumn" msprop:Generator_UserColumnName="idPlanPagoDetalle" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cliente" msprop:Generator_TableClassName="clienteDataTable" msprop:Generator_TableVarName="tablecliente" msprop:Generator_RowChangedName="clienteRowChanged" msprop:Generator_TablePropName="cliente" msprop:Generator_RowDeletingName="clienteRowDeleting" msprop:Generator_RowChangingName="clienteRowChanging" msprop:Generator_RowEvHandlerName="clienteRowChangeEventHandler" msprop:Generator_RowDeletedName="clienteRowDeleted" msprop:Generator_RowClassName="clienteRow" msprop:Generator_UserTableName="cliente" msprop:Generator_RowEvArgName="clienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod_cte" msdata:ReadOnly="true" msdata:Caption="saldo" msprop:Generator_ColumnVarNameInTable="columncod_cte" msprop:Generator_ColumnPropNameInRow="cod_cte" msprop:Generator_ColumnPropNameInTable="cod_cteColumn" msprop:Generator_UserColumnName="cod_cte" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="nombre" msdata:ReadOnly="true" msdata:Caption="abono_sugerido" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="liquidar" msprop:Generator_ColumnVarNameInTable="columnliquidar" msprop:Generator_ColumnPropNameInRow="liquidar" msprop:Generator_ColumnPropNameInTable="liquidarColumn" msprop:Generator_UserColumnName="liquidar" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:formas_pago" />
+      <xs:field xpath="mstns:forma_pago" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
