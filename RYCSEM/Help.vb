@@ -71,6 +71,7 @@ Module Help
         'folioNvo = scmdfolio.Parameters(0).Value
         'folioNvo = scmdfolio.Parameters("@folio").Value
         'errores = scmdfolio.Parameters("@msg").Value
+
         folioNvo = scmdfolio.Parameters("@folio").Value.ToString()
         errores = scmdfolio.Parameters("@msg").Value.ToString()
 
