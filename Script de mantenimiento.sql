@@ -162,3 +162,71 @@ BEGIN
 	SELECT * FROM @Columnas
 END
 GO
+
+-- Creación del SP 'AyDInventario' para que se puedan gestionar los productos
+CREATE PROC [dbo].[AyDInventario]
+    @Trans CHAR(10),
+    @CodArt CHAR(10),
+    @Cant DECIMAL(19, 4),
+    @msg NVARCHAR(MAX) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DECLARE @folio CHAR(10);
+    SET @msg = ''; -- Inicializamos vacío para indicar éxito al VB
+
+    -- 1. Generar el folio automáticamente usando tu SP existente
+    -- Esto es necesario porque tu código VB no lo envía como parámetro
+    EXEC dbo.generaFolio @Trans, @folio OUTPUT, @msg OUTPUT;
+
+    -- Si hubo un error al generar el folio, salimos y devolvemos el error en @msg
+    IF @msg <> '' RETURN;
+
+    BEGIN TRY
+        -- 2. Insertar en el encabezado de inventario
+        -- Usamos usuario '1' por defecto ya que la interfaz no lo proporciona
+        INSERT INTO operaciones_inventario (folio, transaccion, fecha, usuario, status)
+        VALUES (@folio, @Trans, GETDATE(), '1', 'V');
+
+        -- 3. Insertar el detalle del movimiento
+        INSERT INTO moperaciones_inventario (folio, transaccion, cod_art, cantidad)
+        VALUES (@folio, @Trans, @CodArt, @Cant);
+    END TRY
+    BEGIN CATCH
+        SET @msg = 'Error en SQL: ' + ERROR_MESSAGE();
+    END CATCH
+END
+GO
+
+USE RYCSEM;
+GO
+
+-- Inserción de un proveedor de prueba
+INSERT INTO proveedores (
+    razon_social, 
+    rfc, 
+    telefono, 
+    status, 
+    usuario
+)
+VALUES (
+    'Proveedor de Prueba S.A. de C.V.', -- razon_social
+    'XAXX010101000',                -- rfc genérico
+    '5551234567',                   -- telefono
+    'V',                            -- status (V = Vigente)
+    '1'                             -- usuario que lo registra
+);
+GO
+
+USE RYCSEM;
+GO
+
+-- 1. Inserción de un TIPO de artículo (Ej. Smartphone, Tablet, Accesorio)
+INSERT INTO tipos (tipo, nombre)
+VALUES ('T0001', 'Smartphone');
+GO
+
+-- 2. Inserción de un MODELO de celular
+INSERT INTO modelos (modelo, nombre)
+VALUES ('M0001', 'iPhone 15 Pro');
+GO
