@@ -308,5 +308,7 @@
         Me.BtnDismunuir.Enabled = valor
     End Sub
 
+    Private Sub sdaArticulos_RowUpdated(sender As Object, e As SqlClient.SqlRowUpdatedEventArgs) Handles sdaArticulos.RowUpdated
 
+    End Sub
 End Class

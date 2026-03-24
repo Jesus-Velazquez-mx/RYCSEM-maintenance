@@ -202,61 +202,74 @@ Module Help
         End Try
     End Sub
 
+    ' Este método mandaba un null. Se ha corregido
     Public Sub Imagen(ByVal imagen As Object, ByRef PictureBox As PictureBox, Optional ByVal Msg As Boolean = True)
+        If PictureBox Is Nothing Then Return
+
         Try
-            PictureBox.Image = Nothing
-
-            If imagen Is Nothing Then Return
-
-            If IsDBNull(imagen) Then
-                Msg = False
-                'Else
-                '    If Not File.Exists(.Item("ruta").ToString.Trim) Then
-                '        If Msg Then MsgBox("La ruta de la imagen no es válida", MsgBoxStyle.Information)
-                '        Return
-                '    End If
-                '    PictureBox.Image = Image.FromFile(.Item("ruta").ToString.Trim)
-            Else
-                Dim Img() As Byte = CType(imagen, Byte())
-                Dim m As New MemoryStream(Img)
-                PictureBox.Image = Image.FromStream(m)
+            ' Clear previous image safely (dispose to avoid GDI leaks)
+            If PictureBox.Image IsNot Nothing Then
+                PictureBox.Image.Dispose()
+                PictureBox.Image = Nothing
             End If
 
+            If imagen Is Nothing OrElse IsDBNull(imagen) Then
+                Dim W_ph As Integer = If(PictureBox.Width > 0, PictureBox.Width, 100)
+                Dim H_ph As Integer = If(PictureBox.Height > 0, PictureBox.Height, 100)
+                Dim placeholder As New Bitmap(W_ph, H_ph)
+                Using g As Graphics = Graphics.FromImage(placeholder)
+                    g.Clear(Color.WhiteSmoke)
+                    Using f As New Font("Arial", Math.Max(8, W_ph \ 10), FontStyle.Bold)
+                        Dim sf As New StringFormat() With {.Alignment = StringAlignment.Center, .LineAlignment = StringAlignment.Center}
+                        g.DrawString("Sin Imagen", f, Brushes.Silver, New RectangleF(0, 0, W_ph, H_ph), sf)
+                    End Using
+                End Using
+                PictureBox.Image = placeholder
+                Return
+            End If
 
-            Dim W, H As Int16
-            W = PictureBox.Width
-            H = PictureBox.Height
-            PictureBox.SuspendLayout()
-            Dim WI As Int16 = PictureBox.Image.Width
-            Dim HI As Int16 = PictureBox.Image.Height
-            Dim WT, HT As Int16
-            Dim FW, FH As Decimal
-            FW = W / WI : FH = H / HI
-            If WI > W Or HI > H Then 'si excede
-                If FW < FH Then
-                    WT = WI * FW
-                    HT = HI * FW
-                Else
-                    WT = WI * FH
-                    HT = HI * FH
+            Dim ImgData As Byte() = TryCast(imagen, Byte())
+            If ImgData Is Nothing Then
+                If Msg Then MsgBox("Formato de imagen inválido", MsgBoxStyle.Information)
+                Return
+            End If
+
+            Using m As New MemoryStream(ImgData)
+                Dim loaded As Image = Image.FromStream(m)
+                PictureBox.Image = New Bitmap(loaded) ' clone to detach from stream
+            End Using
+
+            Dim imgLocal As Image = PictureBox.Image
+            If imgLocal IsNot Nothing AndAlso imgLocal.Width > 0 AndAlso imgLocal.Height > 0 Then
+                PictureBox.SuspendLayout()
+                Dim W As Integer = PictureBox.Width
+                Dim H As Integer = PictureBox.Height
+                Dim WI As Integer = imgLocal.Width
+                Dim HI As Integer = imgLocal.Height
+                Dim WT As Integer = WI
+                Dim HT As Integer = HI
+                Dim FW As Decimal = W / WI
+                Dim FH As Decimal = H / HI
+
+                If WI > W Or HI > H Then
+                    If FW < FH Then
+                        WT = CInt(WI * FW)
+                        HT = CInt(HI * FW)
+                    Else
+                        WT = CInt(WI * FH)
+                        HT = CInt(HI * FH)
+                    End If
                 End If
-            Else 'si no excede
-                If FW < FH Then
-                    WT = WI * FW
-                    HT = HI * FW
-                Else
-                    WT = WI * FH
-                    HT = HI * FH
-                End If
+
+                Dim Abort As Image.GetThumbnailImageAbort = Nothing
+                Dim thumb As Image = imgLocal.GetThumbnailImage(WT, HT, Abort, IntPtr.Zero)
+                imgLocal.Dispose()
+                PictureBox.Image = thumb
+                PictureBox.ResumeLayout()
             End If
-            Dim Inptr As IntPtr
-            Dim Abort As Image.GetThumbnailImageAbort = Nothing
-            PictureBox.Image = PictureBox.Image.GetThumbnailImage(WT, HT, Abort, Inptr)
-            PictureBox.ResumeLayout()
-        Catch
-            If Msg Then
-                MsgBox("Error al cargar la imagen", MsgBoxStyle.Information)
-            End If
+
+        Catch ex As Exception
+            If Msg Then MsgBox("Error al cargar la imagen: " & ex.Message, MsgBoxStyle.Information)
         End Try
     End Sub
 

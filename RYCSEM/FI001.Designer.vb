@@ -23,12 +23,12 @@ Partial Class FI001
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FI001))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtImagen = New System.Windows.Forms.TextBox()
         Me.dvArticulos = New System.Data.DataView()
@@ -74,17 +74,6 @@ Partial Class FI001
         Me.SdaModelos = New System.Data.SqlClient.SqlDataAdapter()
         Me.gbArticulos = New System.Windows.Forms.GroupBox()
         Me.dgArticulos = New System.Windows.Forms.DataGridView()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnImprimir = New System.Windows.Forms.Button()
-        Me.btnDeshacer = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.CmdAyDInventario = New System.Data.SqlClient.SqlCommand()
-        Me.SqlSelectCommand5 = New System.Data.SqlClient.SqlCommand()
-        Me.SdaTipos = New System.Data.SqlClient.SqlDataAdapter()
         Me.CodartDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -98,6 +87,17 @@ Partial Class FI001
         Me.UsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreimagenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PorcgananciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnDeshacer = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.CmdAyDInventario = New System.Data.SqlClient.SqlCommand()
+        Me.SqlSelectCommand5 = New System.Data.SqlClient.SqlCommand()
+        Me.SdaTipos = New System.Data.SqlClient.SqlDataAdapter()
         CType(Me.dvArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_FI001, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -476,27 +476,27 @@ Partial Class FI001
         Me.SqlInsertCommand1.CommandText = resources.GetString("SqlInsertCommand1.CommandText")
         Me.SqlInsertCommand1.CommandTimeout = 999999999
         Me.SqlInsertCommand1.Connection = Me.sqlConn
-        Me.SqlInsertCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@cod_art", System.Data.SqlDbType.[Char], 10, "cod_art"), New System.Data.SqlClient.SqlParameter("@descripcion", System.Data.SqlDbType.VarChar, 200, "descripcion"), New System.Data.SqlClient.SqlParameter("@costo", System.Data.SqlDbType.Money, 8, "costo"), New System.Data.SqlClient.SqlParameter("@precio", System.Data.SqlDbType.Money, 8, "precio"), New System.Data.SqlClient.SqlParameter("@observaciones", System.Data.SqlDbType.VarChar, 500, "observaciones"), New System.Data.SqlClient.SqlParameter("@status", System.Data.SqlDbType.[Char], 3, "status"), New System.Data.SqlClient.SqlParameter("@imagen", System.Data.SqlDbType.VarBinary, 2147483647, "imagen"), New System.Data.SqlClient.SqlParameter("@nombre_imagen", System.Data.SqlDbType.VarChar, 200, "nombre_imagen"), New System.Data.SqlClient.SqlParameter("@usuario", System.Data.SqlDbType.[Char], 10, "usuario"), New System.Data.SqlClient.SqlParameter("@porc_ganancia", System.Data.SqlDbType.[Decimal], 9, System.Data.ParameterDirection.Input, False, CType(19, Byte), CType(8, Byte), "porc_ganancia", System.Data.DataRowVersion.Current, Nothing), New System.Data.SqlClient.SqlParameter("@modelo", System.Data.SqlDbType.[Char], 10, "modelo"), New System.Data.SqlClient.SqlParameter("@tipo", System.Data.SqlDbType.[Char], 10, "tipo")})
+        Me.SqlInsertCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@cod_art", System.Data.SqlDbType.[Char], 0, "cod_art"), New System.Data.SqlClient.SqlParameter("@descripcion", System.Data.SqlDbType.VarChar, 0, "descripcion"), New System.Data.SqlClient.SqlParameter("@costo", System.Data.SqlDbType.Money, 0, "costo"), New System.Data.SqlClient.SqlParameter("@precio", System.Data.SqlDbType.Money, 0, "precio"), New System.Data.SqlClient.SqlParameter("@observaciones", System.Data.SqlDbType.VarChar, 0, "observaciones"), New System.Data.SqlClient.SqlParameter("@status", System.Data.SqlDbType.[Char], 0, "status"), New System.Data.SqlClient.SqlParameter("@imagen", System.Data.SqlDbType.VarBinary, 0, "imagen"), New System.Data.SqlClient.SqlParameter("@usuario", System.Data.SqlDbType.[Char], 0, "usuario"), New System.Data.SqlClient.SqlParameter("@nombre_imagen", System.Data.SqlDbType.VarChar, 0, "nombre_imagen"), New System.Data.SqlClient.SqlParameter("@porc_ganancia", System.Data.SqlDbType.[Decimal], 0, System.Data.ParameterDirection.Input, False, CType(19, Byte), CType(4, Byte), "porc_ganancia", System.Data.DataRowVersion.Current, Nothing), New System.Data.SqlClient.SqlParameter("@modelo", System.Data.SqlDbType.[Char], 0, "modelo"), New System.Data.SqlClient.SqlParameter("@tipo", System.Data.SqlDbType.[Char], 0, "tipo")})
         '
         'SqlUpdateCommand1
         '
         Me.SqlUpdateCommand1.CommandText = resources.GetString("SqlUpdateCommand1.CommandText")
         Me.SqlUpdateCommand1.CommandTimeout = 99999999
         Me.SqlUpdateCommand1.Connection = Me.sqlConn
-        Me.SqlUpdateCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@cod_art", System.Data.SqlDbType.[Char], 10, "cod_art"), New System.Data.SqlClient.SqlParameter("@descripcion", System.Data.SqlDbType.VarChar, 200, "descripcion"), New System.Data.SqlClient.SqlParameter("@costo", System.Data.SqlDbType.Money, 8, "costo"), New System.Data.SqlClient.SqlParameter("@precio", System.Data.SqlDbType.Money, 8, "precio"), New System.Data.SqlClient.SqlParameter("@observaciones", System.Data.SqlDbType.VarChar, 500, "observaciones"), New System.Data.SqlClient.SqlParameter("@status", System.Data.SqlDbType.[Char], 3, "status"), New System.Data.SqlClient.SqlParameter("@imagen", System.Data.SqlDbType.VarBinary, 2147483647, "imagen"), New System.Data.SqlClient.SqlParameter("@nombre_imagen", System.Data.SqlDbType.VarChar, 200, "nombre_imagen"), New System.Data.SqlClient.SqlParameter("@usuario", System.Data.SqlDbType.[Char], 10, "usuario"), New System.Data.SqlClient.SqlParameter("@porc_ganancia", System.Data.SqlDbType.[Decimal], 9, System.Data.ParameterDirection.Input, False, CType(19, Byte), CType(8, Byte), "porc_ganancia", System.Data.DataRowVersion.Current, Nothing), New System.Data.SqlClient.SqlParameter("@modelo", System.Data.SqlDbType.[Char], 10, "modelo"), New System.Data.SqlClient.SqlParameter("@tipo", System.Data.SqlDbType.[Char], 10, "tipo"), New System.Data.SqlClient.SqlParameter("@Original_cod_art", System.Data.SqlDbType.[Char], 10, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "cod_art", System.Data.DataRowVersion.Original, Nothing)})
+        Me.SqlUpdateCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@cod_art", System.Data.SqlDbType.[Char], 0, "cod_art"), New System.Data.SqlClient.SqlParameter("@descripcion", System.Data.SqlDbType.VarChar, 0, "descripcion"), New System.Data.SqlClient.SqlParameter("@costo", System.Data.SqlDbType.Money, 0, "costo"), New System.Data.SqlClient.SqlParameter("@precio", System.Data.SqlDbType.Money, 0, "precio"), New System.Data.SqlClient.SqlParameter("@observaciones", System.Data.SqlDbType.VarChar, 0, "observaciones"), New System.Data.SqlClient.SqlParameter("@status", System.Data.SqlDbType.[Char], 0, "status"), New System.Data.SqlClient.SqlParameter("@imagen", System.Data.SqlDbType.VarBinary, 0, "imagen"), New System.Data.SqlClient.SqlParameter("@usuario", System.Data.SqlDbType.[Char], 0, "usuario"), New System.Data.SqlClient.SqlParameter("@nombre_imagen", System.Data.SqlDbType.VarChar, 0, "nombre_imagen"), New System.Data.SqlClient.SqlParameter("@porc_ganancia", System.Data.SqlDbType.[Decimal], 0, System.Data.ParameterDirection.Input, False, CType(19, Byte), CType(4, Byte), "porc_ganancia", System.Data.DataRowVersion.Current, Nothing), New System.Data.SqlClient.SqlParameter("@modelo", System.Data.SqlDbType.[Char], 0, "modelo"), New System.Data.SqlClient.SqlParameter("@tipo", System.Data.SqlDbType.[Char], 0, "tipo"), New System.Data.SqlClient.SqlParameter("@Original_cod_art", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "cod_art", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_descripcion", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "descripcion", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_descripcion", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "descripcion", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_costo", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "costo", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_costo", System.Data.SqlDbType.Money, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "costo", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_precio", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "precio", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_precio", System.Data.SqlDbType.Money, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "precio", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_observaciones", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "observaciones", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_observaciones", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "observaciones", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_status", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "status", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_status", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "status", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_usuario", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "usuario", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_usuario", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "usuario", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_nombre_imagen", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "nombre_imagen", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_nombre_imagen", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "nombre_imagen", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_porc_ganancia", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "porc_ganancia", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_porc_ganancia", System.Data.SqlDbType.[Decimal], 0, System.Data.ParameterDirection.Input, False, CType(19, Byte), CType(4, Byte), "porc_ganancia", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_modelo", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "modelo", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_modelo", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "modelo", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_tipo", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "tipo", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_tipo", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "tipo", System.Data.DataRowVersion.Original, Nothing)})
         '
         'SqlDeleteCommand1
         '
-        Me.SqlDeleteCommand1.CommandText = "DELETE FROM [articulos] WHERE (([cod_art] = @Original_cod_art))"
+        Me.SqlDeleteCommand1.CommandText = resources.GetString("SqlDeleteCommand1.CommandText")
         Me.SqlDeleteCommand1.Connection = Me.sqlConn
-        Me.SqlDeleteCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@Original_cod_art", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "cod_art", System.Data.DataRowVersion.Original, Nothing)})
+        Me.SqlDeleteCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@Original_cod_art", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "cod_art", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_descripcion", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "descripcion", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_descripcion", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "descripcion", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_costo", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "costo", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_costo", System.Data.SqlDbType.Money, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "costo", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_precio", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "precio", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_precio", System.Data.SqlDbType.Money, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "precio", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_observaciones", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "observaciones", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_observaciones", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "observaciones", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_status", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "status", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_status", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "status", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_usuario", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "usuario", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_usuario", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "usuario", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_nombre_imagen", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "nombre_imagen", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_nombre_imagen", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "nombre_imagen", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_porc_ganancia", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "porc_ganancia", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_porc_ganancia", System.Data.SqlDbType.[Decimal], 0, System.Data.ParameterDirection.Input, False, CType(19, Byte), CType(4, Byte), "porc_ganancia", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_modelo", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "modelo", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_modelo", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "modelo", System.Data.DataRowVersion.Original, Nothing), New System.Data.SqlClient.SqlParameter("@IsNull_tipo", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "tipo", System.Data.DataRowVersion.Original, True, Nothing, "", "", ""), New System.Data.SqlClient.SqlParameter("@Original_tipo", System.Data.SqlDbType.[Char], 0, System.Data.ParameterDirection.Input, False, CType(0, Byte), CType(0, Byte), "tipo", System.Data.DataRowVersion.Original, Nothing)})
         '
         'sdaArticulos
         '
         Me.sdaArticulos.DeleteCommand = Me.SqlDeleteCommand1
         Me.sdaArticulos.InsertCommand = Me.SqlInsertCommand1
         Me.sdaArticulos.SelectCommand = Me.SqlSelectCommand1
-        Me.sdaArticulos.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "articulos", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("cod_art", "cod_art"), New System.Data.Common.DataColumnMapping("descripcion", "descripcion"), New System.Data.Common.DataColumnMapping("costo", "costo"), New System.Data.Common.DataColumnMapping("precio", "precio"), New System.Data.Common.DataColumnMapping("observaciones", "observaciones"), New System.Data.Common.DataColumnMapping("status", "status"), New System.Data.Common.DataColumnMapping("imagen", "imagen"), New System.Data.Common.DataColumnMapping("nombre_imagen", "nombre_imagen"), New System.Data.Common.DataColumnMapping("usuario", "usuario"), New System.Data.Common.DataColumnMapping("porc_ganancia", "porc_ganancia"), New System.Data.Common.DataColumnMapping("cod_prv", "cod_prv"), New System.Data.Common.DataColumnMapping("razon_social", "razon_social"), New System.Data.Common.DataColumnMapping("modelo", "modelo"), New System.Data.Common.DataColumnMapping("tipo", "tipo")})})
+        Me.sdaArticulos.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "articulos", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("cod_art", "cod_art"), New System.Data.Common.DataColumnMapping("descripcion", "descripcion"), New System.Data.Common.DataColumnMapping("costo", "costo"), New System.Data.Common.DataColumnMapping("precio", "precio"), New System.Data.Common.DataColumnMapping("observaciones", "observaciones"), New System.Data.Common.DataColumnMapping("status", "status"), New System.Data.Common.DataColumnMapping("imagen", "imagen"), New System.Data.Common.DataColumnMapping("usuario", "usuario"), New System.Data.Common.DataColumnMapping("nombre_imagen", "nombre_imagen"), New System.Data.Common.DataColumnMapping("porc_ganancia", "porc_ganancia"), New System.Data.Common.DataColumnMapping("existencia", "existencia"), New System.Data.Common.DataColumnMapping("modelo", "modelo"), New System.Data.Common.DataColumnMapping("tipo", "tipo"), New System.Data.Common.DataColumnMapping("nombre_modelo", "nombre_modelo"), New System.Data.Common.DataColumnMapping("nombre_tipo", "nombre_tipo")})})
         Me.sdaArticulos.UpdateCommand = Me.SqlUpdateCommand1
         '
         'SqlSelectCommand2
@@ -563,14 +563,14 @@ Partial Class FI001
         'dgArticulos
         '
         Me.dgArticulos.AutoGenerateColumns = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgArticulos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgArticulos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodartDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.Column1, Me.CostoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.nombre_modelo, Me.nombre_tipo, Me.ObservacionesDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.ImagenDataGridViewImageColumn, Me.UsuarioDataGridViewTextBoxColumn, Me.NombreimagenDataGridViewTextBoxColumn, Me.PorcgananciaDataGridViewTextBoxColumn})
         Me.dgArticulos.DataSource = Me.dvArticulos
@@ -578,19 +578,134 @@ Partial Class FI001
         Me.dgArticulos.Location = New System.Drawing.Point(3, 41)
         Me.dgArticulos.Name = "dgArticulos"
         Me.dgArticulos.ReadOnly = True
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgArticulos.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgArticulos.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgArticulos.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgArticulos.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.dgArticulos.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgArticulos.Size = New System.Drawing.Size(1002, 353)
         Me.dgArticulos.TabIndex = 40
+        '
+        'CodartDataGridViewTextBoxColumn
+        '
+        Me.CodartDataGridViewTextBoxColumn.DataPropertyName = "cod_art"
+        Me.CodartDataGridViewTextBoxColumn.HeaderText = "Artículo"
+        Me.CodartDataGridViewTextBoxColumn.Name = "CodartDataGridViewTextBoxColumn"
+        Me.CodartDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CodartDataGridViewTextBoxColumn.Width = 95
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripción"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescripcionDataGridViewTextBoxColumn.Width = 300
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "existencia"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.Format = "#,###,##0"
+        DataGridViewCellStyle8.NullValue = "0"
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle8
+        Me.Column1.HeaderText = "Exist. Actual"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 115
+        '
+        'CostoDataGridViewTextBoxColumn
+        '
+        Me.CostoDataGridViewTextBoxColumn.DataPropertyName = "costo"
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle9.Format = "#,###,##0.00"
+        DataGridViewCellStyle9.NullValue = "0"
+        Me.CostoDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle9
+        Me.CostoDataGridViewTextBoxColumn.HeaderText = "Costo."
+        Me.CostoDataGridViewTextBoxColumn.Name = "CostoDataGridViewTextBoxColumn"
+        Me.CostoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CostoDataGridViewTextBoxColumn.Width = 95
+        '
+        'PrecioDataGridViewTextBoxColumn
+        '
+        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "precio"
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.Format = "#,###,##0.00"
+        DataGridViewCellStyle10.NullValue = "0"
+        Me.PrecioDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle10
+        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio."
+        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
+        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PrecioDataGridViewTextBoxColumn.Width = 95
+        '
+        'nombre_modelo
+        '
+        Me.nombre_modelo.DataPropertyName = "nombre_modelo"
+        Me.nombre_modelo.HeaderText = "Modelo"
+        Me.nombre_modelo.Name = "nombre_modelo"
+        Me.nombre_modelo.ReadOnly = True
+        Me.nombre_modelo.Width = 200
+        '
+        'nombre_tipo
+        '
+        Me.nombre_tipo.DataPropertyName = "nombre_tipo"
+        Me.nombre_tipo.HeaderText = "Tipo"
+        Me.nombre_tipo.Name = "nombre_tipo"
+        Me.nombre_tipo.ReadOnly = True
+        '
+        'ObservacionesDataGridViewTextBoxColumn
+        '
+        Me.ObservacionesDataGridViewTextBoxColumn.DataPropertyName = "observaciones"
+        Me.ObservacionesDataGridViewTextBoxColumn.HeaderText = "Características"
+        Me.ObservacionesDataGridViewTextBoxColumn.Name = "ObservacionesDataGridViewTextBoxColumn"
+        Me.ObservacionesDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ObservacionesDataGridViewTextBoxColumn.Width = 450
+        '
+        'StatusDataGridViewTextBoxColumn
+        '
+        Me.StatusDataGridViewTextBoxColumn.DataPropertyName = "status"
+        Me.StatusDataGridViewTextBoxColumn.HeaderText = "Status"
+        Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
+        Me.StatusDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatusDataGridViewTextBoxColumn.Width = 60
+        '
+        'ImagenDataGridViewImageColumn
+        '
+        Me.ImagenDataGridViewImageColumn.DataPropertyName = "imagen"
+        Me.ImagenDataGridViewImageColumn.HeaderText = "imagen"
+        Me.ImagenDataGridViewImageColumn.Name = "ImagenDataGridViewImageColumn"
+        Me.ImagenDataGridViewImageColumn.ReadOnly = True
+        Me.ImagenDataGridViewImageColumn.Visible = False
+        '
+        'UsuarioDataGridViewTextBoxColumn
+        '
+        Me.UsuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario"
+        Me.UsuarioDataGridViewTextBoxColumn.HeaderText = "usuario"
+        Me.UsuarioDataGridViewTextBoxColumn.Name = "UsuarioDataGridViewTextBoxColumn"
+        Me.UsuarioDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UsuarioDataGridViewTextBoxColumn.Visible = False
+        '
+        'NombreimagenDataGridViewTextBoxColumn
+        '
+        Me.NombreimagenDataGridViewTextBoxColumn.DataPropertyName = "nombre_imagen"
+        Me.NombreimagenDataGridViewTextBoxColumn.HeaderText = "nombre_imagen"
+        Me.NombreimagenDataGridViewTextBoxColumn.Name = "NombreimagenDataGridViewTextBoxColumn"
+        Me.NombreimagenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NombreimagenDataGridViewTextBoxColumn.Visible = False
+        '
+        'PorcgananciaDataGridViewTextBoxColumn
+        '
+        Me.PorcgananciaDataGridViewTextBoxColumn.DataPropertyName = "porc_ganancia"
+        Me.PorcgananciaDataGridViewTextBoxColumn.HeaderText = "porc_ganancia"
+        Me.PorcgananciaDataGridViewTextBoxColumn.Name = "PorcgananciaDataGridViewTextBoxColumn"
+        Me.PorcgananciaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PorcgananciaDataGridViewTextBoxColumn.Visible = False
         '
         'Label18
         '
@@ -694,121 +809,6 @@ Partial Class FI001
         '
         Me.SdaTipos.SelectCommand = Me.SqlSelectCommand5
         Me.SdaTipos.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "tipos", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("tipo", "tipo"), New System.Data.Common.DataColumnMapping("nombre", "nombre")})})
-        '
-        'CodartDataGridViewTextBoxColumn
-        '
-        Me.CodartDataGridViewTextBoxColumn.DataPropertyName = "cod_art"
-        Me.CodartDataGridViewTextBoxColumn.HeaderText = "Artículo"
-        Me.CodartDataGridViewTextBoxColumn.Name = "CodartDataGridViewTextBoxColumn"
-        Me.CodartDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CodartDataGridViewTextBoxColumn.Width = 95
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripción"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DescripcionDataGridViewTextBoxColumn.Width = 300
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "existencia"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Format = "#,###,##0"
-        DataGridViewCellStyle2.NullValue = "0"
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column1.HeaderText = "Exist. Actual"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 115
-        '
-        'CostoDataGridViewTextBoxColumn
-        '
-        Me.CostoDataGridViewTextBoxColumn.DataPropertyName = "costo"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "#,###,##0.00"
-        DataGridViewCellStyle3.NullValue = "0"
-        Me.CostoDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.CostoDataGridViewTextBoxColumn.HeaderText = "Costo."
-        Me.CostoDataGridViewTextBoxColumn.Name = "CostoDataGridViewTextBoxColumn"
-        Me.CostoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CostoDataGridViewTextBoxColumn.Width = 95
-        '
-        'PrecioDataGridViewTextBoxColumn
-        '
-        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "precio"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "#,###,##0.00"
-        DataGridViewCellStyle4.NullValue = "0"
-        Me.PrecioDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
-        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio."
-        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
-        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PrecioDataGridViewTextBoxColumn.Width = 95
-        '
-        'nombre_modelo
-        '
-        Me.nombre_modelo.DataPropertyName = "nombre_modelo"
-        Me.nombre_modelo.HeaderText = "Modelo"
-        Me.nombre_modelo.Name = "nombre_modelo"
-        Me.nombre_modelo.ReadOnly = True
-        Me.nombre_modelo.Width = 200
-        '
-        'nombre_tipo
-        '
-        Me.nombre_tipo.DataPropertyName = "nombre_tipo"
-        Me.nombre_tipo.HeaderText = "Tipo"
-        Me.nombre_tipo.Name = "nombre_tipo"
-        Me.nombre_tipo.ReadOnly = True
-        '
-        'ObservacionesDataGridViewTextBoxColumn
-        '
-        Me.ObservacionesDataGridViewTextBoxColumn.DataPropertyName = "observaciones"
-        Me.ObservacionesDataGridViewTextBoxColumn.HeaderText = "Características"
-        Me.ObservacionesDataGridViewTextBoxColumn.Name = "ObservacionesDataGridViewTextBoxColumn"
-        Me.ObservacionesDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ObservacionesDataGridViewTextBoxColumn.Width = 450
-        '
-        'StatusDataGridViewTextBoxColumn
-        '
-        Me.StatusDataGridViewTextBoxColumn.DataPropertyName = "status"
-        Me.StatusDataGridViewTextBoxColumn.HeaderText = "Status"
-        Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
-        Me.StatusDataGridViewTextBoxColumn.ReadOnly = True
-        Me.StatusDataGridViewTextBoxColumn.Width = 60
-        '
-        'ImagenDataGridViewImageColumn
-        '
-        Me.ImagenDataGridViewImageColumn.DataPropertyName = "imagen"
-        Me.ImagenDataGridViewImageColumn.HeaderText = "imagen"
-        Me.ImagenDataGridViewImageColumn.Name = "ImagenDataGridViewImageColumn"
-        Me.ImagenDataGridViewImageColumn.ReadOnly = True
-        Me.ImagenDataGridViewImageColumn.Visible = False
-        '
-        'UsuarioDataGridViewTextBoxColumn
-        '
-        Me.UsuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario"
-        Me.UsuarioDataGridViewTextBoxColumn.HeaderText = "usuario"
-        Me.UsuarioDataGridViewTextBoxColumn.Name = "UsuarioDataGridViewTextBoxColumn"
-        Me.UsuarioDataGridViewTextBoxColumn.ReadOnly = True
-        Me.UsuarioDataGridViewTextBoxColumn.Visible = False
-        '
-        'NombreimagenDataGridViewTextBoxColumn
-        '
-        Me.NombreimagenDataGridViewTextBoxColumn.DataPropertyName = "nombre_imagen"
-        Me.NombreimagenDataGridViewTextBoxColumn.HeaderText = "nombre_imagen"
-        Me.NombreimagenDataGridViewTextBoxColumn.Name = "NombreimagenDataGridViewTextBoxColumn"
-        Me.NombreimagenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NombreimagenDataGridViewTextBoxColumn.Visible = False
-        '
-        'PorcgananciaDataGridViewTextBoxColumn
-        '
-        Me.PorcgananciaDataGridViewTextBoxColumn.DataPropertyName = "porc_ganancia"
-        Me.PorcgananciaDataGridViewTextBoxColumn.HeaderText = "porc_ganancia"
-        Me.PorcgananciaDataGridViewTextBoxColumn.Name = "PorcgananciaDataGridViewTextBoxColumn"
-        Me.PorcgananciaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PorcgananciaDataGridViewTextBoxColumn.Visible = False
         '
         'FI001
         '
