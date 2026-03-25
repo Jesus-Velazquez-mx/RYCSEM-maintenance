@@ -23,12 +23,12 @@ Partial Class FVPOS
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FVPOS))
         Me.spGen = New System.Windows.Forms.SplitContainer()
         Me.spSec = New System.Windows.Forms.SplitContainer()
@@ -61,6 +61,7 @@ Partial Class FVPOS
         Me.btnCancelarVta = New System.Windows.Forms.Button()
         Me.cmbCP = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GbInfo = New System.Windows.Forms.GroupBox()
         Me.btnConsultaInventario = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -116,7 +117,7 @@ Partial Class FVPOS
         Me.SqlCancelarVenta = New System.Data.SqlClient.SqlCommand()
         Me.SqlSelectCommand5 = New System.Data.SqlClient.SqlCommand()
         Me.sdaDocFormasPago = New System.Data.SqlClient.SqlDataAdapter()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.SqlInsertCommand = New System.Data.SqlClient.SqlCommand()
         CType(Me.spGen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.spGen.Panel1.SuspendLayout()
         Me.spGen.Panel2.SuspendLayout()
@@ -135,6 +136,7 @@ Partial Class FVPOS
         CType(Me.DS_FVPOS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbInicio.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbInfo.SuspendLayout()
         CType(Me.numArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbResumen.SuspendLayout()
@@ -144,13 +146,13 @@ Partial Class FVPOS
         CType(Me.numTotal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numIva, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'spGen
         '
         Me.spGen.Dock = System.Windows.Forms.DockStyle.Fill
         Me.spGen.Location = New System.Drawing.Point(0, 0)
+        Me.spGen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.spGen.Name = "spGen"
         Me.spGen.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -162,14 +164,16 @@ Partial Class FVPOS
         '
         Me.spGen.Panel2.Controls.Add(Me.GbResumen)
         Me.spGen.Panel2.Controls.Add(Me.GroupBox1)
-        Me.spGen.Size = New System.Drawing.Size(1035, 712)
-        Me.spGen.SplitterDistance = 526
+        Me.spGen.Size = New System.Drawing.Size(1380, 876)
+        Me.spGen.SplitterDistance = 647
+        Me.spGen.SplitterWidth = 5
         Me.spGen.TabIndex = 0
         '
         'spSec
         '
         Me.spSec.Dock = System.Windows.Forms.DockStyle.Fill
         Me.spSec.Location = New System.Drawing.Point(0, 0)
+        Me.spSec.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.spSec.Name = "spSec"
         Me.spSec.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -178,24 +182,28 @@ Partial Class FVPOS
         Me.spSec.Panel1.Controls.Add(Me.gbArticulos)
         Me.spSec.Panel1.Controls.Add(Me.GbInicio)
         Me.spSec.Panel2Collapsed = True
-        Me.spSec.Size = New System.Drawing.Size(1035, 526)
+        Me.spSec.Size = New System.Drawing.Size(1380, 647)
         Me.spSec.SplitterDistance = 495
+        Me.spSec.SplitterWidth = 5
         Me.spSec.TabIndex = 0
         '
         'gbArticulos
         '
         Me.gbArticulos.Controls.Add(Me.SplitContainer1)
         Me.gbArticulos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gbArticulos.Location = New System.Drawing.Point(0, 316)
+        Me.gbArticulos.Location = New System.Drawing.Point(0, 389)
+        Me.gbArticulos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gbArticulos.Name = "gbArticulos"
-        Me.gbArticulos.Size = New System.Drawing.Size(1035, 210)
+        Me.gbArticulos.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gbArticulos.Size = New System.Drawing.Size(1380, 258)
         Me.gbArticulos.TabIndex = 475
         Me.gbArticulos.TabStop = False
         '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(3, 16)
+        Me.SplitContainer1.Location = New System.Drawing.Point(4, 19)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -206,29 +214,31 @@ Partial Class FVPOS
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.pbImagen)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1029, 191)
-        Me.SplitContainer1.SplitterDistance = 660
+        Me.SplitContainer1.Size = New System.Drawing.Size(1372, 235)
+        Me.SplitContainer1.SplitterDistance = 880
+        Me.SplitContainer1.SplitterWidth = 5
         Me.SplitContainer1.TabIndex = 44
         '
         'dgArticulos
         '
         Me.dgArticulos.AutoGenerateColumns = False
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgArticulos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgArticulos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodartDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.cantidad, Me.ImagenDataGridViewImageColumn, Me.costo, Me.NombreimagenDataGridViewTextBoxColumn, Me.ImporteDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
         Me.dgArticulos.ContextMenuStrip = Me.ContextMenuStrip1
         Me.dgArticulos.DataSource = Me.dvArticulos
         Me.dgArticulos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgArticulos.Location = New System.Drawing.Point(0, 25)
+        Me.dgArticulos.Location = New System.Drawing.Point(0, 31)
+        Me.dgArticulos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgArticulos.Name = "dgArticulos"
-        Me.dgArticulos.Size = New System.Drawing.Size(660, 166)
+        Me.dgArticulos.Size = New System.Drawing.Size(880, 204)
         Me.dgArticulos.TabIndex = 0
         '
         'CodartDataGridViewTextBoxColumn
@@ -250,10 +260,10 @@ Partial Class FVPOS
         'PrecioDataGridViewTextBoxColumn
         '
         Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "precio"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Format = "#,###,##0.00"
-        DataGridViewCellStyle8.NullValue = "0"
-        Me.PrecioDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle13.Format = "#,###,##0.00"
+        DataGridViewCellStyle13.NullValue = "0"
+        Me.PrecioDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle13
         Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio."
         Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
         Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
@@ -262,9 +272,9 @@ Partial Class FVPOS
         'cantidad
         '
         Me.cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Format = "N0"
-        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle14.Format = "N0"
+        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle14
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
         '
@@ -278,10 +288,10 @@ Partial Class FVPOS
         'costo
         '
         Me.costo.DataPropertyName = "iva"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Format = "#,###,##0.00"
-        DataGridViewCellStyle10.NullValue = "0"
-        Me.costo.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle15.Format = "#,###,##0.00"
+        DataGridViewCellStyle15.NullValue = "0"
+        Me.costo.DefaultCellStyle = DataGridViewCellStyle15
         Me.costo.HeaderText = "Iva"
         Me.costo.Name = "costo"
         '
@@ -295,10 +305,10 @@ Partial Class FVPOS
         'ImporteDataGridViewTextBoxColumn
         '
         Me.ImporteDataGridViewTextBoxColumn.DataPropertyName = "importe"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.Format = "#,###,##0.00"
-        DataGridViewCellStyle11.NullValue = "0"
-        Me.ImporteDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle16.Format = "#,###,##0.00"
+        DataGridViewCellStyle16.NullValue = "0"
+        Me.ImporteDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle16
         Me.ImporteDataGridViewTextBoxColumn.HeaderText = "Importe."
         Me.ImporteDataGridViewTextBoxColumn.Name = "ImporteDataGridViewTextBoxColumn"
         Me.ImporteDataGridViewTextBoxColumn.ReadOnly = True
@@ -307,10 +317,10 @@ Partial Class FVPOS
         'TotalDataGridViewTextBoxColumn
         '
         Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "total"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle12.Format = "#,###,##0.00"
-        DataGridViewCellStyle12.NullValue = "0"
-        Me.TotalDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle17.Format = "#,###,##0.00"
+        DataGridViewCellStyle17.NullValue = "0"
+        Me.TotalDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle17
         Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total."
         Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
         Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
@@ -320,27 +330,27 @@ Partial Class FVPOS
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LiquidarToolStripMenuItem, Me.ReimprimirTicketToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(187, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(188, 70)
         '
         'LiquidarToolStripMenuItem
         '
         Me.LiquidarToolStripMenuItem.Name = "LiquidarToolStripMenuItem"
         Me.LiquidarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4
-        Me.LiquidarToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.LiquidarToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.LiquidarToolStripMenuItem.Text = "Liquidar"
         '
         'ReimprimirTicketToolStripMenuItem
         '
         Me.ReimprimirTicketToolStripMenuItem.Name = "ReimprimirTicketToolStripMenuItem"
         Me.ReimprimirTicketToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3
-        Me.ReimprimirTicketToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ReimprimirTicketToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.ReimprimirTicketToolStripMenuItem.Text = "Reimprimir Ticket"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'dvArticulos
@@ -360,8 +370,9 @@ Partial Class FVPOS
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Black
         Me.Label18.Location = New System.Drawing.Point(0, 0)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(660, 25)
+        Me.Label18.Size = New System.Drawing.Size(880, 31)
         Me.Label18.TabIndex = 43
         Me.Label18.Text = "Artículos"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -371,8 +382,9 @@ Partial Class FVPOS
         Me.pbImagen.BackColor = System.Drawing.Color.White
         Me.pbImagen.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbImagen.Location = New System.Drawing.Point(0, 0)
+        Me.pbImagen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbImagen.Name = "pbImagen"
-        Me.pbImagen.Size = New System.Drawing.Size(365, 191)
+        Me.pbImagen.Size = New System.Drawing.Size(487, 235)
         Me.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.pbImagen.TabIndex = 0
         Me.pbImagen.TabStop = False
@@ -398,8 +410,10 @@ Partial Class FVPOS
         Me.GbInicio.Controls.Add(Me.txtCodCte)
         Me.GbInicio.Dock = System.Windows.Forms.DockStyle.Top
         Me.GbInicio.Location = New System.Drawing.Point(0, 0)
+        Me.GbInicio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GbInicio.Name = "GbInicio"
-        Me.GbInicio.Size = New System.Drawing.Size(1035, 316)
+        Me.GbInicio.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GbInicio.Size = New System.Drawing.Size(1380, 389)
         Me.GbInicio.TabIndex = 0
         Me.GbInicio.TabStop = False
         '
@@ -407,7 +421,8 @@ Partial Class FVPOS
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(67, 135)
+        Me.Label14.Location = New System.Drawing.Point(89, 166)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(88, 25)
         Me.Label14.TabIndex = 24
@@ -417,18 +432,20 @@ Partial Class FVPOS
         '
         Me.TxtNotas.ContextMenuStrip = Me.ContextMenuStrip1
         Me.TxtNotas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtNotas.Location = New System.Drawing.Point(161, 132)
+        Me.TxtNotas.Location = New System.Drawing.Point(215, 162)
+        Me.TxtNotas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtNotas.Multiline = True
         Me.TxtNotas.Name = "TxtNotas"
-        Me.TxtNotas.Size = New System.Drawing.Size(440, 75)
+        Me.TxtNotas.Size = New System.Drawing.Size(585, 91)
         Me.TxtNotas.TabIndex = 23
         '
         'btnImprimir
         '
         Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
-        Me.btnImprimir.Location = New System.Drawing.Point(367, 13)
+        Me.btnImprimir.Location = New System.Drawing.Point(489, 16)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(44, 40)
+        Me.btnImprimir.Size = New System.Drawing.Size(59, 49)
         Me.btnImprimir.TabIndex = 22
         Me.ToolTip1.SetToolTip(Me.btnImprimir, "Reimprimir ticket")
         Me.btnImprimir.UseVisualStyleBackColor = True
@@ -436,9 +453,10 @@ Partial Class FVPOS
         'btnDeshacer
         '
         Me.btnDeshacer.Image = CType(resources.GetObject("btnDeshacer.Image"), System.Drawing.Image)
-        Me.btnDeshacer.Location = New System.Drawing.Point(322, 13)
+        Me.btnDeshacer.Location = New System.Drawing.Point(429, 16)
+        Me.btnDeshacer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDeshacer.Name = "btnDeshacer"
-        Me.btnDeshacer.Size = New System.Drawing.Size(44, 40)
+        Me.btnDeshacer.Size = New System.Drawing.Size(59, 49)
         Me.btnDeshacer.TabIndex = 21
         Me.ToolTip1.SetToolTip(Me.btnDeshacer, "Deshacer venta actual")
         Me.btnDeshacer.UseVisualStyleBackColor = True
@@ -448,9 +466,10 @@ Partial Class FVPOS
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
         Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnNuevo.Location = New System.Drawing.Point(277, 13)
+        Me.btnNuevo.Location = New System.Drawing.Point(369, 16)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(44, 40)
+        Me.btnNuevo.Size = New System.Drawing.Size(59, 49)
         Me.btnNuevo.TabIndex = 20
         Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.btnNuevo, "Nueva venta")
@@ -461,9 +480,10 @@ Partial Class FVPOS
         Me.btnCancelarVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelarVta.Image = CType(resources.GetObject("btnCancelarVta.Image"), System.Drawing.Image)
         Me.btnCancelarVta.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCancelarVta.Location = New System.Drawing.Point(417, 13)
+        Me.btnCancelarVta.Location = New System.Drawing.Point(556, 16)
+        Me.btnCancelarVta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelarVta.Name = "btnCancelarVta"
-        Me.btnCancelarVta.Size = New System.Drawing.Size(44, 40)
+        Me.btnCancelarVta.Size = New System.Drawing.Size(59, 49)
         Me.btnCancelarVta.TabIndex = 17
         Me.btnCancelarVta.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.btnCancelarVta, "Cancelar venta")
@@ -476,9 +496,10 @@ Partial Class FVPOS
         Me.cmbCP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCP.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbCP.FormattingEnabled = True
-        Me.cmbCP.Location = New System.Drawing.Point(161, 55)
+        Me.cmbCP.Location = New System.Drawing.Point(215, 68)
+        Me.cmbCP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbCP.Name = "cmbCP"
-        Me.cmbCP.Size = New System.Drawing.Size(170, 33)
+        Me.cmbCP.Size = New System.Drawing.Size(225, 33)
         Me.cmbCP.TabIndex = 20
         Me.cmbCP.ValueMember = "condiciones_pago.condicion"
         '
@@ -487,11 +508,23 @@ Partial Class FVPOS
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(6, 59)
+        Me.Label12.Location = New System.Drawing.Point(8, 73)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(149, 25)
         Me.Label12.TabIndex = 19
         Me.Label12.Text = "COND. PAGO"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox2.Location = New System.Drawing.Point(1048, 19)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(328, 243)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 18
+        Me.PictureBox2.TabStop = False
         '
         'GbInfo
         '
@@ -504,9 +537,11 @@ Partial Class FVPOS
         Me.GbInfo.Controls.Add(Me.numArticulos)
         Me.GbInfo.Controls.Add(Me.TxtCant)
         Me.GbInfo.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GbInfo.Location = New System.Drawing.Point(3, 213)
+        Me.GbInfo.Location = New System.Drawing.Point(4, 262)
+        Me.GbInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GbInfo.Name = "GbInfo"
-        Me.GbInfo.Size = New System.Drawing.Size(1029, 100)
+        Me.GbInfo.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GbInfo.Size = New System.Drawing.Size(1372, 123)
         Me.GbInfo.TabIndex = 17
         Me.GbInfo.TabStop = False
         '
@@ -515,9 +550,10 @@ Partial Class FVPOS
         Me.btnConsultaInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConsultaInventario.Image = CType(resources.GetObject("btnConsultaInventario.Image"), System.Drawing.Image)
         Me.btnConsultaInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConsultaInventario.Location = New System.Drawing.Point(387, 49)
+        Me.btnConsultaInventario.Location = New System.Drawing.Point(516, 60)
+        Me.btnConsultaInventario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnConsultaInventario.Name = "btnConsultaInventario"
-        Me.btnConsultaInventario.Size = New System.Drawing.Size(128, 38)
+        Me.btnConsultaInventario.Size = New System.Drawing.Size(171, 47)
         Me.btnConsultaInventario.TabIndex = 486
         Me.btnConsultaInventario.Text = "F8 Consulta de Inventario"
         Me.btnConsultaInventario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -527,7 +563,8 @@ Partial Class FVPOS
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(39, 14)
+        Me.Label11.Location = New System.Drawing.Point(52, 17)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(90, 29)
         Me.Label11.TabIndex = 11
@@ -537,7 +574,8 @@ Partial Class FVPOS
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(151, 14)
+        Me.Label6.Location = New System.Drawing.Point(201, 17)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(141, 29)
         Me.Label6.TabIndex = 8
@@ -547,9 +585,10 @@ Partial Class FVPOS
         '
         Me.txtArticulo.ContextMenuStrip = Me.ContextMenuStrip1
         Me.txtArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtArticulo.Location = New System.Drawing.Point(118, 49)
+        Me.txtArticulo.Location = New System.Drawing.Point(157, 60)
+        Me.txtArticulo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtArticulo.Name = "txtArticulo"
-        Me.txtArticulo.Size = New System.Drawing.Size(213, 38)
+        Me.txtArticulo.Size = New System.Drawing.Size(283, 38)
         Me.txtArticulo.TabIndex = 1
         '
         'btnEliminar
@@ -557,9 +596,10 @@ Partial Class FVPOS
         Me.btnEliminar.ContextMenuStrip = Me.ContextMenuStrip1
         Me.btnEliminar.Font = New System.Drawing.Font("Arial Black", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(337, 49)
+        Me.btnEliminar.Location = New System.Drawing.Point(449, 60)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(44, 38)
+        Me.btnEliminar.Size = New System.Drawing.Size(59, 47)
         Me.btnEliminar.TabIndex = 9
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
@@ -568,7 +608,8 @@ Partial Class FVPOS
         Me.Label1.AutoSize = True
         Me.Label1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(760, 56)
+        Me.Label1.Location = New System.Drawing.Point(1013, 69)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(161, 25)
         Me.Label1.TabIndex = 0
@@ -579,12 +620,13 @@ Partial Class FVPOS
         Me.numArticulos.ContextMenuStrip = Me.ContextMenuStrip1
         Me.numArticulos.Enabled = False
         Me.numArticulos.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.numArticulos.Location = New System.Drawing.Point(927, 52)
+        Me.numArticulos.Location = New System.Drawing.Point(1236, 64)
+        Me.numArticulos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.numArticulos.Maximum = New Decimal(New Integer() {1316134911, 2328, 0, 0})
         Me.numArticulos.Minimum = New Decimal(New Integer() {1316134911, 2328, 0, -2147483648})
         Me.numArticulos.Name = "numArticulos"
         Me.numArticulos.ReadOnly = True
-        Me.numArticulos.Size = New System.Drawing.Size(72, 32)
+        Me.numArticulos.Size = New System.Drawing.Size(96, 32)
         Me.numArticulos.TabIndex = 0
         Me.numArticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.numArticulos.ThousandsSeparator = True
@@ -593,9 +635,10 @@ Partial Class FVPOS
         '
         Me.TxtCant.ContextMenuStrip = Me.ContextMenuStrip1
         Me.TxtCant.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCant.Location = New System.Drawing.Point(45, 49)
+        Me.TxtCant.Location = New System.Drawing.Point(60, 60)
+        Me.TxtCant.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtCant.Name = "TxtCant"
-        Me.TxtCant.Size = New System.Drawing.Size(67, 38)
+        Me.TxtCant.Size = New System.Drawing.Size(88, 38)
         Me.TxtCant.TabIndex = 0
         '
         'dtpFecha
@@ -603,16 +646,18 @@ Partial Class FVPOS
         Me.dtpFecha.CustomFormat = "dd/MMM/yyyy"
         Me.dtpFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFecha.Location = New System.Drawing.Point(431, 56)
+        Me.dtpFecha.Location = New System.Drawing.Point(575, 69)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(170, 32)
+        Me.dtpFecha.Size = New System.Drawing.Size(225, 32)
         Me.dtpFecha.TabIndex = 16
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(340, 60)
+        Me.Label10.Location = New System.Drawing.Point(453, 74)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(85, 25)
         Me.Label10.TabIndex = 15
@@ -622,7 +667,8 @@ Partial Class FVPOS
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(78, 21)
+        Me.Label9.Location = New System.Drawing.Point(104, 26)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(77, 25)
         Me.Label9.TabIndex = 14
@@ -632,9 +678,10 @@ Partial Class FVPOS
         '
         Me.txtFolio.ContextMenuStrip = Me.ContextMenuStrip1
         Me.txtFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFolio.Location = New System.Drawing.Point(161, 18)
+        Me.txtFolio.Location = New System.Drawing.Point(215, 22)
+        Me.txtFolio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtFolio.Name = "txtFolio"
-        Me.txtFolio.Size = New System.Drawing.Size(110, 30)
+        Me.txtFolio.Size = New System.Drawing.Size(145, 30)
         Me.txtFolio.TabIndex = 13
         '
         'txtNombre
@@ -643,17 +690,19 @@ Partial Class FVPOS
         Me.txtNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DS_FVPOS, "clientes.nombre", True))
         Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(251, 95)
+        Me.txtNombre.Location = New System.Drawing.Point(335, 117)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.ReadOnly = True
-        Me.txtNombre.Size = New System.Drawing.Size(350, 30)
+        Me.txtNombre.Size = New System.Drawing.Size(465, 30)
         Me.txtNombre.TabIndex = 11
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(52, 97)
+        Me.Label7.Location = New System.Drawing.Point(69, 119)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(103, 25)
         Me.Label7.TabIndex = 9
@@ -663,9 +712,10 @@ Partial Class FVPOS
         '
         Me.txtCodCte.ContextMenuStrip = Me.ContextMenuStrip1
         Me.txtCodCte.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodCte.Location = New System.Drawing.Point(161, 95)
+        Me.txtCodCte.Location = New System.Drawing.Point(215, 117)
+        Me.txtCodCte.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCodCte.Name = "txtCodCte"
-        Me.txtCodCte.Size = New System.Drawing.Size(84, 30)
+        Me.txtCodCte.Size = New System.Drawing.Size(111, 30)
         Me.txtCodCte.TabIndex = 7
         '
         'GbResumen
@@ -687,9 +737,11 @@ Partial Class FVPOS
         Me.GbResumen.Controls.Add(Me.Label4)
         Me.GbResumen.Controls.Add(Me.Label5)
         Me.GbResumen.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GbResumen.Location = New System.Drawing.Point(0, -11)
+        Me.GbResumen.Location = New System.Drawing.Point(0, -14)
+        Me.GbResumen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GbResumen.Name = "GbResumen"
-        Me.GbResumen.Size = New System.Drawing.Size(1035, 154)
+        Me.GbResumen.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GbResumen.Size = New System.Drawing.Size(1380, 190)
         Me.GbResumen.TabIndex = 0
         Me.GbResumen.TabStop = False
         '
@@ -698,9 +750,10 @@ Partial Class FVPOS
         Me.BtnAbonos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAbonos.Image = CType(resources.GetObject("BtnAbonos.Image"), System.Drawing.Image)
         Me.BtnAbonos.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAbonos.Location = New System.Drawing.Point(208, 60)
+        Me.BtnAbonos.Location = New System.Drawing.Point(277, 74)
+        Me.BtnAbonos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnAbonos.Name = "BtnAbonos"
-        Me.BtnAbonos.Size = New System.Drawing.Size(84, 70)
+        Me.BtnAbonos.Size = New System.Drawing.Size(112, 86)
         Me.BtnAbonos.TabIndex = 20
         Me.BtnAbonos.Text = "F5 ABONOS CLIENTE"
         Me.BtnAbonos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -711,9 +764,10 @@ Partial Class FVPOS
         Me.btnMovsCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMovsCaja.Image = CType(resources.GetObject("btnMovsCaja.Image"), System.Drawing.Image)
         Me.btnMovsCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnMovsCaja.Location = New System.Drawing.Point(13, 60)
+        Me.btnMovsCaja.Location = New System.Drawing.Point(17, 74)
+        Me.btnMovsCaja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnMovsCaja.Name = "btnMovsCaja"
-        Me.btnMovsCaja.Size = New System.Drawing.Size(84, 70)
+        Me.btnMovsCaja.Size = New System.Drawing.Size(112, 86)
         Me.btnMovsCaja.TabIndex = 19
         Me.btnMovsCaja.Text = "F6 MOVS CAJA"
         Me.btnMovsCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -724,9 +778,10 @@ Partial Class FVPOS
         Me.btnCorteCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCorteCaja.Image = CType(resources.GetObject("btnCorteCaja.Image"), System.Drawing.Image)
         Me.btnCorteCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCorteCaja.Location = New System.Drawing.Point(110, 60)
+        Me.btnCorteCaja.Location = New System.Drawing.Point(147, 74)
+        Me.btnCorteCaja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCorteCaja.Name = "btnCorteCaja"
-        Me.btnCorteCaja.Size = New System.Drawing.Size(84, 70)
+        Me.btnCorteCaja.Size = New System.Drawing.Size(112, 86)
         Me.btnCorteCaja.TabIndex = 18
         Me.btnCorteCaja.Text = "F7 CORTE CAJA"
         Me.btnCorteCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -737,9 +792,10 @@ Partial Class FVPOS
         Me.btnLiquidar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLiquidar.Image = CType(resources.GetObject("btnLiquidar.Image"), System.Drawing.Image)
         Me.btnLiquidar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnLiquidar.Location = New System.Drawing.Point(900, 28)
+        Me.btnLiquidar.Location = New System.Drawing.Point(1200, 34)
+        Me.btnLiquidar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnLiquidar.Name = "btnLiquidar"
-        Me.btnLiquidar.Size = New System.Drawing.Size(124, 89)
+        Me.btnLiquidar.Size = New System.Drawing.Size(165, 110)
         Me.btnLiquidar.TabIndex = 16
         Me.btnLiquidar.Text = "F4 PAGAR/GUARDAR"
         Me.btnLiquidar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -751,12 +807,13 @@ Partial Class FVPOS
         Me.numImporte.DecimalPlaces = 2
         Me.numImporte.Enabled = False
         Me.numImporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.numImporte.Location = New System.Drawing.Point(732, 16)
+        Me.numImporte.Location = New System.Drawing.Point(976, 20)
+        Me.numImporte.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.numImporte.Maximum = New Decimal(New Integer() {1316134911, 2328, 0, 0})
         Me.numImporte.Minimum = New Decimal(New Integer() {1316134911, 2328, 0, -2147483648})
         Me.numImporte.Name = "numImporte"
         Me.numImporte.ReadOnly = True
-        Me.numImporte.Size = New System.Drawing.Size(158, 32)
+        Me.numImporte.Size = New System.Drawing.Size(211, 32)
         Me.numImporte.TabIndex = 1
         Me.numImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.numImporte.ThousandsSeparator = True
@@ -767,12 +824,13 @@ Partial Class FVPOS
         Me.numDescuento.DecimalPlaces = 2
         Me.numDescuento.Enabled = False
         Me.numDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.numDescuento.Location = New System.Drawing.Point(732, 16)
+        Me.numDescuento.Location = New System.Drawing.Point(976, 20)
+        Me.numDescuento.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.numDescuento.Maximum = New Decimal(New Integer() {1316134911, 2328, 0, 0})
         Me.numDescuento.Minimum = New Decimal(New Integer() {1316134911, 2328, 0, -2147483648})
         Me.numDescuento.Name = "numDescuento"
         Me.numDescuento.ReadOnly = True
-        Me.numDescuento.Size = New System.Drawing.Size(158, 32)
+        Me.numDescuento.Size = New System.Drawing.Size(211, 32)
         Me.numDescuento.TabIndex = 2
         Me.numDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.numDescuento.ThousandsSeparator = True
@@ -782,9 +840,10 @@ Partial Class FVPOS
         '
         Me.numDescPorc.ContextMenuStrip = Me.ContextMenuStrip1
         Me.numDescPorc.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.numDescPorc.Location = New System.Drawing.Point(402, 97)
+        Me.numDescPorc.Location = New System.Drawing.Point(536, 119)
+        Me.numDescPorc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.numDescPorc.Name = "numDescPorc"
-        Me.numDescPorc.Size = New System.Drawing.Size(84, 30)
+        Me.numDescPorc.Size = New System.Drawing.Size(112, 30)
         Me.numDescPorc.TabIndex = 13
         Me.numDescPorc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -793,7 +852,8 @@ Partial Class FVPOS
         Me.Label2.AutoSize = True
         Me.Label2.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(592, 20)
+        Me.Label2.Location = New System.Drawing.Point(789, 25)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(134, 25)
         Me.Label2.TabIndex = 1
@@ -806,12 +866,13 @@ Partial Class FVPOS
         Me.numTotal.Enabled = False
         Me.numTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.numTotal.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.numTotal.Location = New System.Drawing.Point(732, 92)
+        Me.numTotal.Location = New System.Drawing.Point(976, 113)
+        Me.numTotal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.numTotal.Maximum = New Decimal(New Integer() {1316134911, 2328, 0, 0})
         Me.numTotal.Minimum = New Decimal(New Integer() {1316134911, 2328, 0, -2147483648})
         Me.numTotal.Name = "numTotal"
         Me.numTotal.ReadOnly = True
-        Me.numTotal.Size = New System.Drawing.Size(158, 38)
+        Me.numTotal.Size = New System.Drawing.Size(211, 38)
         Me.numTotal.TabIndex = 4
         Me.numTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.numTotal.ThousandsSeparator = True
@@ -820,9 +881,10 @@ Partial Class FVPOS
         '
         Me.btnAD.ContextMenuStrip = Me.ContextMenuStrip1
         Me.btnAD.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAD.Location = New System.Drawing.Point(492, 97)
+        Me.btnAD.Location = New System.Drawing.Point(656, 119)
+        Me.btnAD.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAD.Name = "btnAD"
-        Me.btnAD.Size = New System.Drawing.Size(89, 30)
+        Me.btnAD.Size = New System.Drawing.Size(119, 37)
         Me.btnAD.TabIndex = 14
         Me.btnAD.Text = "AD"
         Me.btnAD.UseVisualStyleBackColor = True
@@ -833,12 +895,13 @@ Partial Class FVPOS
         Me.numIva.DecimalPlaces = 2
         Me.numIva.Enabled = False
         Me.numIva.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.numIva.Location = New System.Drawing.Point(732, 54)
+        Me.numIva.Location = New System.Drawing.Point(976, 66)
+        Me.numIva.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.numIva.Maximum = New Decimal(New Integer() {1316134911, 2328, 0, 0})
         Me.numIva.Minimum = New Decimal(New Integer() {1316134911, 2328, 0, -2147483648})
         Me.numIva.Name = "numIva"
         Me.numIva.ReadOnly = True
-        Me.numIva.Size = New System.Drawing.Size(158, 32)
+        Me.numIva.Size = New System.Drawing.Size(211, 32)
         Me.numIva.TabIndex = 3
         Me.numIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.numIva.ThousandsSeparator = True
@@ -847,7 +910,8 @@ Partial Class FVPOS
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(299, 100)
+        Me.Label8.Location = New System.Drawing.Point(399, 123)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(97, 25)
         Me.Label8.TabIndex = 15
@@ -858,7 +922,8 @@ Partial Class FVPOS
         Me.Label3.AutoSize = True
         Me.Label3.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(629, 20)
+        Me.Label3.Location = New System.Drawing.Point(839, 25)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 25)
         Me.Label3.TabIndex = 2
@@ -870,7 +935,8 @@ Partial Class FVPOS
         Me.Label4.AutoSize = True
         Me.Label4.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(653, 58)
+        Me.Label4.Location = New System.Drawing.Point(871, 71)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 25)
         Me.Label4.TabIndex = 3
@@ -882,7 +948,8 @@ Partial Class FVPOS
         Me.Label5.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label5.Location = New System.Drawing.Point(586, 94)
+        Me.Label5.Location = New System.Drawing.Point(781, 116)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(140, 31)
         Me.Label5.TabIndex = 4
@@ -892,9 +959,11 @@ Partial Class FVPOS
         '
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 143)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 176)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1035, 39)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(1380, 48)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         '
@@ -903,7 +972,8 @@ Partial Class FVPOS
         Me.Label13.AutoSize = True
         Me.Label13.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(943, 16)
+        Me.Label13.Location = New System.Drawing.Point(1287, 19)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(89, 25)
         Me.Label13.TabIndex = 4
@@ -914,12 +984,12 @@ Partial Class FVPOS
         Me.SqlSelectCommand1.CommandText = "SELECT        cod_cte, dbo.nombreCompleto(cod_cte, 'C') AS nombre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM          " &
     "  clientes WITH (NOLOCK)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (cod_cte = @cod_cte) AND (status = 'V')"
         Me.SqlSelectCommand1.Connection = Me.sqlConn
-        Me.SqlSelectCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@cod_cte", System.Data.SqlDbType.[Char], 10, "cod_cte")})
+        Me.SqlSelectCommand1.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@cod_cte", System.Data.SqlDbType.VarChar, 10, "cod_cte")})
         '
         'sqlConn
         '
-        Me.sqlConn.ConnectionString = "Data Source=LUNAPOON;Initial Catalog=RYCSEM;Persist Security Info=True;User ID=SA" &
-    ";Password=luna"
+        Me.sqlConn.ConnectionString = "Data Source=ASUS10137\PERSONALSERVER;Initial Catalog=RYCSEM;Persist Security Info" &
+    "=True;User ID=sa;Password=Jesu2016;Encrypt=True;TrustServerCertificate=True"
         Me.sqlConn.FireInfoMessageEventOnUserErrors = False
         '
         'sdaCliente
@@ -1028,22 +1098,21 @@ Partial Class FVPOS
         Me.sdaDocFormasPago.SelectCommand = Me.SqlSelectCommand5
         Me.sdaDocFormasPago.TableMappings.AddRange(New System.Data.Common.DataTableMapping() {New System.Data.Common.DataTableMapping("Table", "documentos_formas_pago", New System.Data.Common.DataColumnMapping() {New System.Data.Common.DataColumnMapping("id", "id"), New System.Data.Common.DataColumnMapping("folio", "folio"), New System.Data.Common.DataColumnMapping("transaccion", "transaccion"), New System.Data.Common.DataColumnMapping("forma_pago", "forma_pago"), New System.Data.Common.DataColumnMapping("monto", "monto")})})
         '
-        'PictureBox2
+        'SqlInsertCommand
         '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Location = New System.Drawing.Point(786, 16)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(246, 197)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 18
-        Me.PictureBox2.TabStop = False
+        Me.SqlInsertCommand.CommandText = "INSERT INTO [clientes] ([cod_cte]) VALUES (@cod_cte);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT cod_cte, dbo.nombre" &
+    "Completo(cod_cte, 'C') AS nombre FROM clientes WITH (NOLOCK) WHERE (cod_cte = @c" &
+    "od_cte)"
+        Me.SqlInsertCommand.CommandTimeout = 30
+        Me.SqlInsertCommand.Parameters.AddRange(New System.Data.SqlClient.SqlParameter() {New System.Data.SqlClient.SqlParameter("@cod_cte", System.Data.SqlDbType.[Char], 0, "cod_cte")})
         '
         'FVPOS
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1035, 712)
+        Me.ClientSize = New System.Drawing.Size(1380, 876)
         Me.Controls.Add(Me.spGen)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FVPOS"
         Me.Text = "POS"
         Me.spGen.Panel1.ResumeLayout(False)
@@ -1065,6 +1134,7 @@ Partial Class FVPOS
         CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbInicio.ResumeLayout(False)
         Me.GbInicio.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbInfo.ResumeLayout(False)
         Me.GbInfo.PerformLayout()
         CType(Me.numArticulos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1077,7 +1147,6 @@ Partial Class FVPOS
         CType(Me.numIva, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1169,4 +1238,5 @@ Partial Class FVPOS
     Friend WithEvents SqlSelectCommand5 As SqlClient.SqlCommand
     Friend WithEvents sdaDocFormasPago As SqlClient.SqlDataAdapter
     Friend WithEvents PictureBox2 As PictureBox
+    Friend SqlInsertCommand As System.Data.SqlClient.SqlCommand
 End Class

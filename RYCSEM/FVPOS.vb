@@ -581,5 +581,7 @@
         End If
     End Sub
 
+    Private Sub sdaCliente_RowUpdated(sender As Object, e As SqlClient.SqlRowUpdatedEventArgs) Handles sdaCliente.RowUpdated
 
+    End Sub
 End Class

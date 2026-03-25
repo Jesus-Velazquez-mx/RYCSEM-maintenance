@@ -176,7 +176,6 @@ BEGIN
     SET @msg = ''; -- Inicializamos vacío para indicar éxito al VB
 
     -- 1. Generar el folio automáticamente usando tu SP existente
-    -- Esto es necesario porque tu código VB no lo envía como parámetro
     EXEC dbo.generaFolio @Trans, @folio OUTPUT, @msg OUTPUT;
 
     -- Si hubo un error al generar el folio, salimos y devolvemos el error en @msg
@@ -184,7 +183,6 @@ BEGIN
 
     BEGIN TRY
         -- 2. Insertar en el encabezado de inventario
-        -- Usamos usuario '1' por defecto ya que la interfaz no lo proporciona
         INSERT INTO operaciones_inventario (folio, transaccion, fecha, usuario, status)
         VALUES (@folio, @Trans, GETDATE(), '1', 'V');
 
@@ -210,23 +208,127 @@ INSERT INTO proveedores (
     usuario
 )
 VALUES (
-    'Proveedor de Prueba S.A. de C.V.', -- razon_social
-    'XAXX010101000',                -- rfc genérico
-    '5551234567',                   -- telefono
-    'V',                            -- status (V = Vigente)
-    '1'                             -- usuario que lo registra
+    'Proveedor de Prueba S.A. de C.V.',
+    'XAXX010101000',
+    '5551234567',
+    'V',
+    '1'
 );
 GO
 
 USE RYCSEM;
 GO
 
--- 1. Inserción de un TIPO de artículo (Ej. Smartphone, Tablet, Accesorio)
+-- Inserción de un TIPO de artículo
 INSERT INTO tipos (tipo, nombre)
 VALUES ('T0001', 'Smartphone');
 GO
 
--- 2. Inserción de un MODELO de celular
+-- Inserción de un MODELO de celular
 INSERT INTO modelos (modelo, nombre)
 VALUES ('M0001', 'iPhone 15 Pro');
 GO
+
+-- Correcciones para el funcionamiento del apartado POS
+-- Registrar al cliente "Público General" (PG)
+INSERT INTO clientes (cod_cte, razon_social, nombre, rfc, status, usuario)
+VALUES ('PG', 'PUBLICO GENERAL', 'PUBLICO GENERAL', 'XAXX010101000', 'V', '1');
+GO
+
+-- Registrar la Transacción 05 para que el sistema sepa generar folios
+INSERT INTO transacciones (transaccion, nombre, tabla, campo_id, serie)
+VALUES ('05', 'Venta POS', 'notas_venta', 'folio', 'V');
+GO
+
+-- Crear la tabla de Ventas que falta en tu BD original
+CREATE TABLE notas_venta (
+    folio CHAR(10) NOT NULL,
+    transaccion CHAR(10) NOT NULL,
+    fecha DATETIME,
+    cod_cte CHAR(10),
+    domicilio_entrega VARCHAR(250),
+    cond_pago CHAR(5),
+    plazo INT,
+    porc_descuento DECIMAL(19,4),
+    importe_descuento MONEY,
+    importe MONEY,
+    iva MONEY,
+    ieps MONEY,
+    saldo MONEY,
+    abonos MONEY,
+    forma_pago CHAR(5),
+    venta_publico BIT,
+    razon_social VARCHAR(250),
+    total MONEY,
+    domicilio_cliente BIT,
+    status CHAR(3),
+    entregado BIT,
+    enganche MONEY,
+    porc_enganche DECIMAL(19,4),
+    notas VARCHAR(500),
+    PRIMARY KEY (folio, transaccion)
+);
+GO
+
+USE RYCSEM;
+GO
+
+-- Insertar las Condiciones de Pago base
+INSERT INTO condiciones_pago (condicion, nombre, status) VALUES ('01', 'CONTADO', 'V');
+INSERT INTO condiciones_pago (condicion, nombre, status) VALUES ('02', 'CREDITO', 'V');
+GO
+
+-- Tabla para guardar los artículos de cada nota (Ticket)
+CREATE TABLE notas_venta_detalle (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    folio CHAR(10) NOT NULL,
+    transaccion CHAR(10) NOT NULL,
+    cod_art CHAR(10),
+    cantidad DECIMAL(19,4),
+    unidad CHAR(5),
+    importe MONEY,
+    iva MONEY,
+    ieps MONEY,
+    porc_descuento DECIMAL(19,4),
+    importe_descuento MONEY,
+    total MONEY
+);
+GO
+
+-- Tabla para guardar si pagaron en Efectivo, Tarjeta, etc.
+CREATE TABLE documentos_formas_pago (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    folio CHAR(10) NOT NULL,
+    transaccion CHAR(10) NOT NULL,
+    forma_pago CHAR(10),
+    monto DECIMAL(19,4)
+);
+GO
+
+-- Tabla para el historial del turno (Para que funcione el Corte de Caja F7)
+CREATE TABLE historico_ventas_turno (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    turnoid INT,
+    fecha SMALLDATETIME,
+    folio CHAR(10) NOT NULL,
+    total DECIMAL(19,4),
+    status CHAR(1) DEFAULT 'V' 
+);
+GO
+
+-- Crear el catálogo de formas de pago
+CREATE TABLE formas_pago (
+    forma_pago CHAR(5) PRIMARY KEY,
+    nombre VARCHAR(50),
+    status CHAR(3)
+);
+GO
+
+-- Insertar los métodos de pago más comunes
+INSERT INTO formas_pago (forma_pago, nombre, status) VALUES ('01', 'EFECTIVO', 'V');
+INSERT INTO formas_pago (forma_pago, nombre, status) VALUES ('02', 'TARJETA', 'V');
+INSERT INTO formas_pago (forma_pago, nombre, status) VALUES ('03', 'TRANSFERENCIA', 'V');
+GO
+
+select * from notas_venta
+select * from notas_venta_detalle

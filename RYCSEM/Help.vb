@@ -273,6 +273,7 @@ Module Help
         End Try
     End Sub
 
+    ' Esto es para 32 bits. Hay que forzar la app para que abra en una arquitectura de 32 bits.
     Public Sub imprimeReporte(ByVal reporte As String, ByRef DS As System.Data.DataSet,
                               Optional ByVal opcion As String = "", Optional ByVal Folio As String = "", Optional ByVal Transaccion As String = "", Optional ByVal parametros(,) As Object = Nothing)
         Dim RD As CrystalDecisions.CrystalReports.Engine.ReportDocument
